@@ -452,11 +452,11 @@ a {
     }
 
     .p {
-        margin: 0;
+        margin: 15px 0;
 
         font-size: 35px;
         text-align: center;
-        padding: 0 5px;
+        
     }
 
     .catalog__subtittle {
@@ -479,7 +479,7 @@ a {
     }
 
     .atelye {
-        padding-bottom: 20px;
+        padding-bottom: 0px;
     }
 
     .catalog {
