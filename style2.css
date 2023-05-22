@@ -51,30 +51,30 @@ a {
 .intro {
     width: 100%;
     height: 100vh;
-    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    margin: 0;
+    padding: 0;
 
 }
 
 .intro__inner {
     width: 100%;
     margin: 0 auto;
-    text-align-last: center;
+    max-width: 1250px;
+    text-align: center;
 }
 
 .logo {
     margin: 0 auto;
-    padding-top: 100px;
+    padding-top: 25px;
     max-width: 100%;
     height: auto;
 }
 
 
-
-
 .intro__tittle {
-
-    margin: 0 auto 300px auto;
-    font-family: sans-serif;
     font-size: 36px;
     color: #000;
     font-weight: 300;
@@ -82,7 +82,7 @@ a {
     line-height: 1.3;
     max-width: 919px;
     text-align: center;
-    z-index: 1000;
+    margin: 0 auto 0 auto;
 
 
 
@@ -109,6 +109,7 @@ a {
 .header__logo {
     display: none;
     transition: all 0.7s ease;
+    z-index: 1000;
 
 
 
@@ -119,12 +120,13 @@ a {
     text-transform: uppercase;
     font-weight: 300;
     text-align: center;
-    margin: 0 auto;
     padding: 33px 0;
+    margin: auto;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 
 .nav__link {
@@ -204,30 +206,23 @@ a {
     flex-wrap: wrap;
 }
 
+.sector {
+    font-size: 40px;
+    padding: 0 0 15px 0;
+}
+
 .p {
-    font-size: 50px;
-    margin-top: 100px;
-    max-width: 560px;
-    text-align: start;
-    padding-top: 77px;
-
-}
-
-
-.atlogo {
-    width: 653px;
-    height: 483px;
+    font-size: 30px;
+    margin-top: 50px;
     max-width: 100%;
-    min-height: 100%;
-    align-items: center;
-    background:
-        url(images/atelye.jpeg) center no-repeat;
-    margin: 77px 0;
-    border-radius: 33px;
-    box-shadow: 33px 33px #be364d;
+    text-align: start;
+    padding-top: 0px;
 
 }
 
+#grey {
+    background-color: #f0f0f0;
+}
 
 
 .catalog {
@@ -241,7 +236,7 @@ a {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 60px 0;
+    padding: 50px 0;
 
 }
 
@@ -257,7 +252,7 @@ a {
 .catalog__subtittle {
     padding: 33px 0;
     font-weight: 700;
-    font-size: 40px;
+    font-size: 35px;
     color: #000;
 }
 
@@ -276,20 +271,20 @@ a {
 
 
 .about__inner {
-    margin: 50px 0;
+    margin: 0px 0 25px 0;
 }
 
 .about__pp {
-    font-size: 35px;
+    font-size: 30px;
     color: #000;
     font-weight: 300;
     text-align: center;
-    padding: 77px 0;
+    padding: 40px 0;
 }
 
 .contacts {
     background-color: #f0f0f0;
-    padding-top: 50px;
+    padding-top: 70px;
     padding-bottom: 5px;
     height: 100%;
 
@@ -348,7 +343,7 @@ a {
 }
 
 .map {
-    width: 1500px;
+    width: 100%;
     height: 500px;
     margin: 0 auto;
 
@@ -365,6 +360,10 @@ a {
     margin-bottom: 40px;
 }
 
+.adress__main {
+    padding-top: 50px;
+}
+
 .footer {
     background-color: #000;
     width: 100%;
@@ -375,18 +374,22 @@ a {
 .footer__inner {
     display: flex;
     justify-content: space-around;
-
-
 }
 
 .copyright {
     color: #fff;
     font-size: 20px;
     font-weight: 200;
-    
-    
+    line-height: 5em;
 
 
+
+
+}
+
+#plan {
+    color: #ffffff;
+    z-index: 1000;
 }
 
 .sticky header {
@@ -419,15 +422,33 @@ a {
     }
 
     .intro__tittle {
-        font-size: 35px;
+        font-size: 25px;
         padding: 0 10px;
         margin-top: 30px;
 
 
     }
 
+    .catalog__p {
+        margin: 0px 22px 20px 22px;
+    }
+
+    .products {
+        padding: 10px 0;
+        display: block;
+    }
+
+    .sector {
+        font-size: 25px;
+    }
+
+    li {
+        font-size: 18px;
+    }
+
+
     .tittle {
-        font-size: 50px;
+        font-size: 35px;
     }
 
     .p {
@@ -436,6 +457,11 @@ a {
         font-size: 35px;
         text-align: center;
         padding: 0 5px;
+    }
+
+    .catalog__subtittle {
+        font-size: 25px;
+        padding: 20px 0;
     }
 
     .atlogo {
@@ -453,7 +479,7 @@ a {
     }
 
     .atelye {
-        padding-bottom: 50px;
+        padding-bottom: 20px;
     }
 
     .catalog {
@@ -462,7 +488,7 @@ a {
 
     .about__pp {
         padding: 5px 10px;
-        font-size: 30px;
+        font-size: 18px;
         font-weight: 200;
     }
 
@@ -470,12 +496,20 @@ a {
         margin: 25px 0;
     }
 
+    .contacts {
+        padding-top: 30px;
+    }
+
+    .cont__sub {
+        font-size: 25px;
+    }
+
     .contacts__info {
         justify-content: center;
     }
 
     .cont__block {
-        margin: 30px 0;
+        margin: 15px 0;
     }
 
     .media__info {
@@ -484,12 +518,17 @@ a {
     }
 
     .media__tittle {
-        padding: 30px 0;
+        padding: 0px 0;
+        font-size: 35px;
+    }
+
+    .adress {
+        font-size: 25px;
     }
 
     .copyright {
         font-size: 17px;
-        
+
 
     }
 
@@ -497,9 +536,15 @@ a {
         margin-top: 40px;
     }
 
-    .footer__image {
-        width: 70px;
-        height: 100px;
+
+    .footer__inner {
+        display: flex;
+        flex-wrap: wrap;
     }
+
+    #n {
+        display: none;
+    }
+
 
 }
