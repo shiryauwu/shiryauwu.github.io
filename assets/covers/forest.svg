@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480" viewBox="0 0 480 480">
+  <defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#a9beb1"/><stop offset="1" stop-color="#547c6d"/></linearGradient></defs>
+  <path fill="url(#bg)" d="M0 0h480v480H0z"/>
+  <path d="M0 300 Q140 100 290 300 T480 240 V480 H0Z" fill="#416e5e"/><path d="M0 350 Q180 160 340 340 T480 310 V480 H0Z" fill="#2c564c"/><g stroke="#dae5d0" stroke-width="3" opacity=".7"><path d="M125 330V150m0 40-35 35m35-10 40 40m145 70V120m0 45-30 30m30 5 45 45"/></g>
+  <path fill="#141523" opacity=".24" d="M0 386h480v94H0z"/>
+  <g fill="#fff" font-family="Arial,sans-serif"><text x="30" y="422" font-size="22" font-weight="700" letter-spacing="2">ТИХИЙ БЕРЕГ</text><text x="30" y="449" font-size="11" letter-spacing="2">LO-FI / FIELD RECORDINGS</text><text x="30" y="38" font-size="11" letter-spacing="3">SOUNDMARK / DEMO</text></g>
+</svg>

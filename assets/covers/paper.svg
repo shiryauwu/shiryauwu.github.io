@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480" viewBox="0 0 480 480">
+  <defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#e9d9c0"/><stop offset="1" stop-color="#c59e8c"/></linearGradient></defs>
+  <path fill="url(#bg)" d="M0 0h480v480H0z"/>
+  <path d="M72 115 L402 160 L286 332 L242 235Z" fill="#fcf2e1"/><path d="M72 115 L242 235 L286 332 L258 216Z" fill="#d0b49b"/><path d="M258 216 L402 160 L242 235Z" fill="#fffaf1"/><path d="M75 340 Q175 280 210 355 T390 345" fill="none" stroke="#fff8" stroke-width="2" stroke-dasharray="6 9"/>
+  <path fill="#141523" opacity=".24" d="M0 386h480v94H0z"/>
+  <g fill="#fff" font-family="Arial,sans-serif"><text x="30" y="422" font-size="22" font-weight="700" letter-spacing="2">МЕЖДУ СТРОК</text><text x="30" y="449" font-size="11" letter-spacing="2">PIANO / SMALL STORIES</text><text x="30" y="38" font-size="11" letter-spacing="3">SOUNDMARK / DEMO</text></g>
+</svg>

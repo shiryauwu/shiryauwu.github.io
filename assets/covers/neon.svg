@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480" viewBox="0 0 480 480">
+  <defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#262047"/><stop offset="1" stop-color="#9b3373"/></linearGradient></defs>
+  <path fill="url(#bg)" d="M0 0h480v480H0z"/>
+  <g fill="none" stroke-width="5"><path d="M-20 305 Q115 40 250 275 T510 180" stroke="#f27fa9"/><path d="M-20 335 Q115 70 250 305 T510 210" stroke="#fcba9b"/><path d="M-20 365 Q115 100 250 335 T510 240" stroke="#75d6d2"/><circle cx="240" cy="235" r="135" stroke="#ffffff22"/></g>
+  <path fill="#141523" opacity=".24" d="M0 386h480v94H0z"/>
+  <g fill="#fff" font-family="Arial,sans-serif"><text x="30" y="422" font-size="22" font-weight="700" letter-spacing="2">НЕОНОВЫЕ СНЫ</text><text x="30" y="449" font-size="11" letter-spacing="2">SYNTHPOP / VOL. 01</text><text x="30" y="38" font-size="11" letter-spacing="3">SOUNDMARK / DEMO</text></g>
+</svg>

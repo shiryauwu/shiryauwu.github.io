@@ -1,5 +1,91 @@
-<html>
-    <h1>
-        ДЕНИС ХАПЦЕВ ДУРАК БЛИН
-    </h1>
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2592e">
+  <title>SoundMark — музыка и рецензии</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="demo-data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Перейти к содержимому</a>
+  <div class="main-layout" id="app-shell">
+    <aside class="sidebar" aria-label="Боковая панель">
+      <a class="logo-link" href="#welcome" aria-label="SoundMark — стартовая страница"><img src="assets/icons/logo.png" alt="SoundMark" class="logo-img"></a>
+      <nav class="menu" aria-label="Основная навигация">
+        <a class="menu-item" href="#feed"><img src="assets/icons/home.png" alt="">Лента</a>
+        <a class="menu-item" href="#search"><img src="assets/icons/search.png" alt="">Поиск</a>
+        <a class="menu-item" href="#subscriptions"><img src="assets/icons/subscriptions.png" alt="">Подписки</a>
+        <a class="menu-item" href="#favorites"><img src="assets/icons/fav_false.png" alt="">Избранное</a>
+        <a class="menu-item" href="#artist/me"><img src="assets/icons/profile.png" alt="">Профиль</a>
+        <a class="menu-item" href="#about"><img src="assets/icons/more.png" alt="">Ещё</a>
+      </nav>
+      <div class="sidebar-actions">
+        <button class="button primary" data-action="upload">Опубликовать трек</button>
+        <button class="button secondary" data-action="review">Написать рецензию</button>
+      </div>
+      <section class="sidebar-player" aria-label="Аудиоплеер">
+        <div class="audio-player">
+          <div class="player-header" id="player-info"></div>
+          <div class="player-controls">
+            <button class="icon-button" data-action="previous" aria-label="Предыдущий трек"><img src="assets/icons/back_track.png" alt=""></button>
+            <button class="icon-button player-play" id="player-play" data-action="player-toggle" aria-label="Воспроизвести"><img src="assets/icons/play.png" alt=""></button>
+            <button class="icon-button" data-action="next" aria-label="Следующий трек"><img src="assets/icons/next_track.png" alt=""></button>
+          </div>
+          <div class="player-seek"><span id="current-time">0:00</span><input id="seek" type="range" min="0" max="0" value="0" step="0.1" aria-label="Позиция воспроизведения"><span id="total-time">0:00</span></div>
+          <label class="player-volume"><img src="assets/icons/volume.png" alt="Громкость"><input id="volume" type="range" min="0" max="1" value="0.7" step="0.01" aria-label="Громкость"></label>
+        </div>
+        <p class="demo-note">Демонстрационная версия</p>
+      </section>
+    </aside>
+    <main id="main-content" class="main-content" tabindex="-1"></main>
+  </div>
+  <section id="welcome" class="welcome" hidden>
+    <img class="welcome-logo" src="assets/logo.svg" alt="SoundMark">
+    <h1>Создавай то,<br>что откликается в сердцах</h1>
+    <a class="button primary" href="#feed">Открыть SoundMark</a>
+    <img class="welcome-background" src="assets/background.png" alt="">
+  </section>
+  <dialog id="upload-dialog" class="modal modal-wide" aria-labelledby="upload-title">
+    <button class="modal-close" data-action="close-dialog" aria-label="Закрыть">×</button>
+    <h2 id="upload-title">Информация о треке</h2>
+    <form id="upload-form">
+      <div class="upload-columns">
+        <div class="upload-cover-column">
+          <label for="cover-file" class="cover-upload" id="cover-preview"><span>＋<small>Добавить обложку</small></span></label>
+          <input id="cover-file" class="file-input" type="file" accept="image/png,image/jpeg,image/webp">
+        </div>
+        <div class="upload-fields">
+          <label for="track-title">Название трека</label>
+          <input id="track-title" name="title" placeholder="Название трека" required maxlength="100">
+          <label for="track-artist">Исполнитель</label>
+          <input id="track-artist" name="artist" placeholder="Имя исполнителя" value="Вы" required maxlength="80">
+          <label for="track-description">Описание</label>
+          <textarea id="track-description" name="description" placeholder="Расскажите о своей музыке" maxlength="500" rows="3"></textarea>
+          <label class="file-label" for="audio-file">♫ <span id="audio-filename">Добавить аудиофайл</span></label>
+          <input id="audio-file" class="file-input" type="file" accept="audio/*,.mp3,.wav,.ogg,.m4a,.flac" required>
+        </div>
+      </div>
+      <p class="form-note">Файл доступен только в этой вкладке до обновления страницы.</p>
+      <p class="form-error" id="upload-error" role="alert"></p>
+      <div class="modal-actions"><button type="submit" class="button primary">Опубликовать</button><button type="reset" class="button muted">Очистить</button></div>
+    </form>
+  </dialog>
+  <dialog id="review-dialog" class="modal" aria-labelledby="review-title">
+    <button class="modal-close" data-action="close-dialog" aria-label="Закрыть">×</button>
+    <h2 id="review-title">Написать рецензию</h2>
+    <form id="review-form" class="upload-fields">
+      <label for="review-track">Трек</label><select id="review-track" name="track" required></select>
+      <label for="review-rating">Оценка</label><select id="review-rating" name="rating"><option value="5">★★★★★ — 5</option><option value="4">★★★★☆ — 4</option><option value="3">★★★☆☆ — 3</option><option value="2">★★☆☆☆ — 2</option><option value="1">★☆☆☆☆ — 1</option></select>
+      <label for="review-text">Рецензия</label><textarea id="review-text" name="text" rows="5" placeholder="Поделитесь впечатлениями" required maxlength="1500"></textarea>
+      <p class="form-note">Рецензия сохранится в этой вкладке до обновления страницы.</p>
+      <button class="button primary" type="submit">Добавить рецензию</button>
+    </form>
+  </dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <audio id="audio" preload="metadata"></audio>
+  <noscript>Для открытия карточек и добавления файла включите JavaScript в браузере.</noscript>
+</body>
 </html>
